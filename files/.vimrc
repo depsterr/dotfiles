@@ -40,7 +40,7 @@ if has("multi_byte")
 endif
 
 colorscheme github
-if $TERM == "linux"
+if $TERM == "linux" || $TERM == "screen-256color"
 	colorscheme default
 endif
 
