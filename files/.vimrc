@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 filetype plugin indent on
 let NERDTreeShowHidden=1
@@ -39,11 +38,10 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-if $DISPLAY == "" 
+if $DISPLAY == ""  "check if in tty
 	colorscheme default
 else
 	colorscheme github
 endif
 
-let g:AutoPairsShortcutFastWrap = "<C-f>"
 set ts=4 sw=4
