@@ -1,0 +1,2 @@
+cd st
+make install
