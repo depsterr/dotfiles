@@ -19,6 +19,12 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 map <C-n> :NERDTreeToggle<CR>
 hi Normal guibg=NONE ctermbg=NONE
 
