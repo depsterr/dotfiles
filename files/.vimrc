@@ -11,7 +11,6 @@ filetype plugin indent on
 let NERDTreeShowHidden=1
 
 syntax enable
-colorscheme github
 set t_ut=
 set nu
 set laststatus=2
@@ -38,6 +37,11 @@ if has("multi_byte")
   " Note, this will not apply to the first, empty buffer created at Vim startup.
   "setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
+endif
+
+colorscheme github
+if $TERM == "linux"
+	colorscheme default
 endif
 
 let g:AutoPairsShortcutFastWrap = "<C-f>"
