@@ -39,9 +39,10 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-colorscheme github
-if $TERM == "linux" || $TERM == "screen-256color"
+if $DISPLAY == "" 
 	colorscheme default
+else
+	colorscheme github
 endif
 
 let g:AutoPairsShortcutFastWrap = "<C-f>"
