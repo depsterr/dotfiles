@@ -5,6 +5,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 let NERDTreeShowHidden=1
@@ -40,8 +45,15 @@ endif
 
 if $DISPLAY == ""  "check if in tty
 	colorscheme default
+	let g:airline_theme='base16_default'
 else
 	colorscheme github
+	let g:airline_theme='atomic'
 endif
 
 set ts=4 sw=4
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
