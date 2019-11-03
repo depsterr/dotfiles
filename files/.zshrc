@@ -21,7 +21,7 @@ ZSH_THEME="philips-mod"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -45,7 +45,7 @@ ZSH_THEME="philips-mod"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -68,17 +68,17 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract web-search yum git-extras docker vagrant vi-mode)
+plugins=(git extract web-search git-extras docker vagrant vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:/sbin/
+export PATH=$PATH:/sbin/:/home/deppy/.local/bin:/snap/bin/
 export EDITOR=vim
 
 if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P0232323" #black
+    echo -en "\e]PFFFFFFF" #white
     echo -en "\e]P82B2B2B" #darkgrey
     echo -en "\e]P1D75F5F" #darkred
     echo -en "\e]P9E33636" #red
@@ -93,7 +93,7 @@ if [ "$TERM" = "linux" ]; then
     echo -en "\e]P65FAFAF" #darkcyan
     echo -en "\e]PE44C9C9" #cyan
     echo -en "\e]P7E5E5E5" #lightgrey
-    echo -en "\e]PFFFFFFF" #white
+    echo -en "\e]P0232323" #black
     clear #for background artifacting
 fi
 
@@ -118,5 +118,6 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias zshconfigupdate="source ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
