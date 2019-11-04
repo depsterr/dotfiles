@@ -1,7 +1,7 @@
 # startx if logging in in the startup tty
 if [ "$(tty)" = "/dev/tty1" ]; then
 	echo -e "Welcome!\n\nWhat do you want to open?\n\n[x] start the x server\n[t]continue to tty\n[T] open tmux in the tty"
-	read -p  xtT
+	read xtT
 	case $xtT in
 		[x]* ) startx;;
 		[t]* ) clear;;
