@@ -1,8 +1,3 @@
-# startx if logging in in the startup tty
-if [ "$(tty)" = "dev/tty1" ]; then
-	startx
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -81,6 +76,11 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/sbin/:/home/deppy/.local/bin:/snap/bin/
 export EDITOR=vim
+
+# startx if logging in in the startup tty
+if [ "$(tty)" = "/dev/tty1" ]; then
+	startx
+fi
 
 if [ "$TERM" = "linux" ]; then
     echo -en "\e]PFFFFFFF" #white
