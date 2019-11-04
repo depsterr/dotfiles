@@ -1,2 +1,2 @@
-cd st
+cd files/st
 make install
