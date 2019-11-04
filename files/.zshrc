@@ -76,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:/sbin/:/home/deppy/.local/bin:/snap/bin/
+export PATH=$PATH:/sbin/:/home/deppy/.local/bin:/snap/bin/:~/.scripts/
 export EDITOR=vim
 
 if [ "$TERM" = "linux" ]; then
