@@ -1,3 +1,8 @@
+# startx if logging in in the startup tty
+if [ "$(tty)" = "dev/tty1" ]; then
+	startx
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
