@@ -1,1 +1,1 @@
-cp .tmux .tmux.conf .vim .vimrc .zshrc ~ -r
+cp .scripts .tmux .tmux.conf .vim .vimrc .zshrc ~ -r
