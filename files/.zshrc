@@ -119,5 +119,5 @@ fi
 #
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-alias zshconfigupdate="source ~/.zshrc"
+alias zshrcupdate="source ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
