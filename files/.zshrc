@@ -1,8 +1,11 @@
-# fix issues with permissions on my pc 
-ZSH_DISABLE_COMPFIX="true"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# fix broken binds
+
+bindkey '[3~' delete-char
+bindkey '[1~' beginning-of-line
+bindkey '[4~' end-of-line
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
