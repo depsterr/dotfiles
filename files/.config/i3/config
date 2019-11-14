@@ -8,19 +8,22 @@ font pango:monospace 8
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# keyboard layout fix
-exec setxkbmap -model pc105 -layout us,se -variant ,swerty -option grp:alt_shift_toggle
-
-
 # Border
 for_window [class="^.*"] border pixel 3
+
+new_window pixel 
 
 # S M A R T border
 smart_borders on
 
+# colors
+client.focused          #FF49E7 #FF49E7 #000000 #FF49E7
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #5f676a #ffffff #484e50   #5f676a
+
 # gaps
-# gaps inner 10
-# gaps outer 10
+gaps inner 9
+gaps outer 5
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -42,11 +45,17 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec st
 
+# start firefox
+bindsym $mod+BackSpace exec firefox
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+
+# screenshot
+bindsym Print exec screenshot
 
 # change focus
 bindsym $mod+h focus left
@@ -161,3 +170,7 @@ bar {
 		height 25
         status_command i3status
 }
+
+# start compton
+exec_always --no-startup-id compton --config /home/deppy/.compton.conf
+exec ~/.fehbg
