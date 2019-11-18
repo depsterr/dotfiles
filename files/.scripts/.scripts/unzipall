@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -z "$1" ]
+then
+	unzip \*.zip && rm \./*.zip -rf
+else
+	unzip \\$1/*.zip && rm $1/*.zip -rf
+fi
