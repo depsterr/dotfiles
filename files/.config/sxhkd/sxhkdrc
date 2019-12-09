@@ -1,0 +1,52 @@
+#
+# Volume
+#
+
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+
+#
+# Brightness
+#
+
+XF86MonBrightnessUp
+	xbacklight -inc 1 -time 50
+XF86MonBrightnessDown
+	xbacklight -dec 1 -time 50
+
+super + XF86MonBrightnessUp
+	xbacklight -set 100 -time 50
+super + XF86MonBrightnessDown
+	xbacklight -set 1 -time 50
+
+#
+# Applications
+#
+
+# start a terminal
+super + Return 
+	st
+
+# start ranger
+super + o
+	st -e ranger
+
+# start qutebrowser
+super + BackSpace
+	qutebrowser
+
+# start dmenu
+super + d
+	dmenu_run
+
+# screenshot script
+Print
+	screenshot
