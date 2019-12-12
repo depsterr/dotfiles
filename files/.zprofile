@@ -1,6 +1,6 @@
-# fix the keyboard layout
-setxkbmap -model pc105 -layout us,se -variant ,swerty -option grp:alt_shift_toggle
-# startx if logging in in the startup tty
+export PATH=$PATH:/home/deppy/.gem/ruby/2.6.0/bin:/home/deppy/.gem/ruby/2.6.0/gems
 if [ "$(tty)" = "/dev/tty1" ]; then
-	zsh ~/.scripts/login.sh
+	sh ~/.scripts/login_script
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"

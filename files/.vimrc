@@ -10,13 +10,18 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+Plugin 'lervag/vimtex'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 let NERDTreeShowHidden=1
 
+au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
+
 syntax enable
 set t_ut=
-set nu
+set number relativenumber
 set laststatus=2
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -27,6 +32,44 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+
+"
+" Hex editing
+"
+noremap <localleader>he :call HexToggle()<CR>
+
+let g:is_hex = 0
+
+function! HexToggle()
+	if g:is_hex
+		let g:is_hex = 0
+		:%!xxd -r
+	else
+		let g:is_hex = 1
+		:%!xxd
+	endif
+endfunction	
+
+"
+" Line numbers
+"
+noremap <localleader>hl :call LineNumberToggle()<CR>
+
+let g:hide_lines = 0
+
+function! LineNumberToggle()
+	if g:hide_lines
+		let g:hide_lines = 0
+		set number relativenumber
+	else
+		let g:hide_lines = 1
+		set nonumber norelativenumber
+	endif
+endfunction	
+
+"
+"
+"
 
 map <C-n> :NERDTreeToggle<CR>
 hi Normal guibg=NONE ctermbg=NONE
@@ -57,3 +100,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:vimtex_view_general_viewer = 'mupdf'

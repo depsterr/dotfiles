@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -z $1 ]; then
+	echo "kgrep: no arguments given"
+else
+	pgrep $1 | xargs kill $2
+fi
