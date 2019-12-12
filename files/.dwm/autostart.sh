@@ -11,6 +11,6 @@ compton &
 
 # date
 while true; do
-	xsetroot -name "$(date +%a\ %d\ %b\ %R)"
+	xsetroot -name " $(acpi) | $(date +%a\ %d\ %b\ %R)"
 	sleep 5
 done &
