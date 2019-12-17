@@ -11,6 +11,6 @@ compton &
 
 # date
 while true; do
-	xsetroot -name " $(acpi) | $(date +%a\ %d\ %b\ %R)"
+	xsetroot -name "| $(< /sys/class/power_supply/BAT1/capacity)% | $(< /sys/class/power_supply/BAT1/status) | $(date +%a\ %d\ %b\ %R:%S) |"
 	sleep 5
 done &
