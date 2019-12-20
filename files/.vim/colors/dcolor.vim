@@ -17,8 +17,8 @@ hi VisualNOS   ctermfg=239   ctermbg=5  guifg=#FFFFFF   guibg=#204a87
 hi Search   ctermfg=236   ctermbg=228  guifg=#000000   guibg=#FFFF8C  cterm=bold gui=bold
 hi Folded   ctermfg=8 ctermbg=15 guifg=#808080 guibg=#ECECEC gui=bold cterm=bold
 hi Title    ctermfg=167 guifg=#ef5939
-hi StatusLine ctermfg=238 ctermbg=5 guifg=#404040 guibg=#bbbbbb gui=bold cterm=bold
-hi StatusLineNC ctermfg=238 ctermbg=252 guifg=#404040 guibg=#d4d4d4 gui=italic cterm=italic
+hi StatusLine ctermfg=0 ctermbg=5 guifg=#404040 guibg=#bbbbbb gui=bold cterm=bold
+hi StatusLineNC ctermfg=0 ctermbg=252 guifg=#404040 guibg=#d4d4d4 gui=italic cterm=italic
 hi VertSplit ctermfg=250 ctermbg=250 guifg=#bbbbbb guibg=#bbbbbb gui=none cterm=none
 hi LineNr   ctermfg=5 ctermbg=NONE guifg=#959595 guibg=NONE gui=bold 
 hi SpecialKey ctermfg=6 guifg=#177F80 gui=italic cterm=italic
@@ -104,8 +104,8 @@ endif
 " }}}
 
 " {{{ Airline
-hi airlineN1 ctermfg=188 ctermbg=0 guifg=#dddddd guibg=#000000 gui=none cterm=none
-hi airlineN2 ctermfg=188 ctermbg=238 guifg=#dddddd guibg=#404040 gui=none cterm=none
+hi airlineN1 ctermfg=0 ctermbg=0 guifg=#dddddd guibg=#000000 gui=none cterm=none
+hi airlineN2 ctermfg=0 ctermbg=238 guifg=#dddddd guibg=#404040 gui=none cterm=none
 hi airlineN3 ctermfg=0 ctermbg=188 guifg=#000000 guibg=#dddddd gui=none cterm=none
 hi airlineInsert1 ctermfg=188 ctermbg=26 guifg=#dddddd guibg=#005cc5 gui=none cterm=none
 hi airlineInsert2 ctermfg=188 ctermbg=17 guifg=#dddddd guibg=#032f62 gui=none cterm=none
