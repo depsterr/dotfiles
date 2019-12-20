@@ -1,14 +1,4 @@
-" Vim color file -- with 256 colour support!
-"
-" Author: Anthony Carapetis <anthony.carapetis@gmail.com>
-" Contributors: Lucas Tadeu <lucastadeuteixeira@gmail.com>
-"
-" Note: Based on github's syntax highlighting theme
-"       Used Brian Mock's darkspectrum as a starting point/template
-"       Thanks to Ryan Heath for an easy list of some of the colours:
-"       http://rpheath.com/posts/356-github-theme-for-syntax-gem
-
-set background=light
+set background=dark
 
 if version > 580
     hi clear
@@ -17,20 +7,20 @@ if version > 580
     endif
 endif
 
-let colors_name = "github"
+let colors_name = "dcolor"
 
 " {{{ General colors
-hi Normal   ctermfg=0   ctermbg=255  guifg=#000000   guibg=#F8F8FF
+hi Normal   ctermfg=NONE   ctermbg=NONE  guifg=NONE   guibg=NONE
 hi Cursor   ctermfg=239   ctermbg=15  guifg=#F8F8FF   guibg=#444454
-hi Visual   ctermfg=15   ctermbg=61  guifg=#FFFFFF   guibg=#3465a3
-hi VisualNOS   ctermfg=15   ctermbg=24  guifg=#FFFFFF   guibg=#204a87
+hi Visual   ctermfg=239   ctermbg=5  guifg=#FFFFFF   guibg=#3465a3
+hi VisualNOS   ctermfg=239   ctermbg=5  guifg=#FFFFFF   guibg=#204a87
 hi Search   ctermfg=236   ctermbg=228  guifg=#000000   guibg=#FFFF8C  cterm=bold gui=bold
 hi Folded   ctermfg=8 ctermbg=15 guifg=#808080 guibg=#ECECEC gui=bold cterm=bold
 hi Title    ctermfg=167 guifg=#ef5939
-hi StatusLine ctermfg=238 ctermbg=250 guifg=#404040 guibg=#bbbbbb gui=bold cterm=bold
+hi StatusLine ctermfg=238 ctermbg=5 guifg=#404040 guibg=#bbbbbb gui=bold cterm=bold
 hi StatusLineNC ctermfg=238 ctermbg=252 guifg=#404040 guibg=#d4d4d4 gui=italic cterm=italic
 hi VertSplit ctermfg=250 ctermbg=250 guifg=#bbbbbb guibg=#bbbbbb gui=none cterm=none
-hi LineNr   ctermfg=246 ctermbg=15 guifg=#959595 guibg=#ECECEC gui=bold cterm=bold
+hi LineNr   ctermfg=5 ctermbg=NONE guifg=#959595 guibg=NONE gui=bold 
 hi SpecialKey ctermfg=6 guifg=#177F80 gui=italic cterm=italic
 hi WarningMsg ctermfg=167 guifg=#ef5939
 hi ErrorMsg ctermbg=15 ctermfg=196 guibg=#f8f8ff guifg=#ff1100 gui=undercurl cterm=undercurl
@@ -62,13 +52,12 @@ hi preproc  ctermfg=247 guifg=#a0a0a0 gui=bold cterm=bold
 hi comment  ctermfg=246 guifg=#999988
 hi constant ctermfg=6 guifg=#177f80 gui=none cterm=none
 hi string   ctermfg=161 guifg=#d81745
-hi function ctermfg=88 guifg=#990000 gui=bold cterm=bold
-hi statement    ctermfg=0 guifg=#000000 gui=bold cterm=bold
+hi function ctermfg=161 guifg=#990000 gui=bold cterm=bold
+hi statement    ctermfg=9 guifg=#000000 gui=bold cterm=bold
 hi type     ctermfg=60 guifg=#445588 gui=bold   cterm=bold
 hi number   ctermfg=30 guifg=#1c9898
-hi todo     ctermfg=15 ctermbg=88 guifg=#ffffff guibg=#990000 gui=bold cterm=bold
 hi special  ctermfg=28 guifg=#159828 gui=bold   cterm=bold
-hi todo         ctermbg=15 ctermfg=196 guibg=#f8f8ff guifg=#ff1100 gui=underline cterm=underline
+hi todo         ctermbg=NONE ctermfg=196 guibg=#f8f8ff guifg=#ff1100 gui=underline cterm=underline
 hi label        ctermfg=0 guifg=#000000 gui=bold    cterm=bold
 hi storageclass ctermfg=0 guifg=#000000 gui=bold    cterm=bold
 hi structure    ctermfg=0 guifg=#000000 gui=bold    cterm=bold

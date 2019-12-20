@@ -1,6 +1,8 @@
+" I honestly don't know
 set nocompatible
 filetype off
 
+" Vundle plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -15,19 +17,38 @@ Plugin 'lervag/vimtex'
 Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
-let NERDTreeShowHidden=1
 
+" nerdtree settings
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
+
+" syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" vimtex settings
+let g:vimtex_view_general_viewer = 'mupdf'
+
+" Set filetype of .nasm and .asm files
 au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
 
+" Enable syntax highlighting
 syntax enable
+" idk
 set t_ut=
+" set linenumbers
 set number relativenumber
+" enable airline
 set laststatus=2
+" remove arrow keys (added this when I was new to get used to hjkl
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Map control+hjkl to switch split
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
@@ -50,55 +71,41 @@ function! HexToggle()
 	endif
 endfunction	
 
-"
 " Line numbers
+noremap <localleader>hl :set nu! rnu!<CR>
+
 "
-noremap <localleader>hl :call LineNumberToggle()<CR>
+" Markdown preview
+"
 
-let g:hide_lines = 0
+noremap <localleader>md :call StartMdPreview()<CR>
 
-function! LineNumberToggle()
-	if g:hide_lines
-		let g:hide_lines = 0
-		set number relativenumber
-	else
-		let g:hide_lines = 1
-		set nonumber norelativenumber
-	endif
+function! StartMdPreview()
+	:! pgrep grip | xargs kill -KILL
+	:! grip %  &
+	:! surf http://localhost:6419 &
 endfunction	
 
-"
-"
-"
+" folding
+set foldmethod=indent
+set foldlevelstart=99
 
-map <C-n> :NERDTreeToggle<CR>
-hi Normal guibg=NONE ctermbg=NONE
+noremap <space> za
+noremap <C-@> zA
 
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  " Uncomment to have 'bomb' on by default for new files.
-  " Note, this will not apply to the first, empty buffer created at Vim startup.
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
-
-if $DISPLAY == ""  "check if in tty
+" different colorscheme for tty
+if $DISPLAY == ""
 	colorscheme default
 	let g:airline_theme='base16_default'
 else
-	colorscheme github
+	colorscheme dcolor
 	let g:airline_theme='atomic'
 endif
 
+" tab settings
 set ts=4 sw=4
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:vimtex_view_general_viewer = 'mupdf'
+" comments
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>

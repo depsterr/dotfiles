@@ -1,14 +1,18 @@
+#! /bin/sh
 # startx if logging in in the startup tty
 clear
 echo -en "\n\n"
 neofetch --ascii
-echo -en "\033[0;36m\n\n  Welcome!\n\n   What do you want to open?\n\n\033[0;34m    [d/i] start the x server\n    [t] continue to tty\n    [T] open tmux in the ttyn\n    [w] Start wpa_supplicant\n\n\t"
-read xtTw
-case $xtTw in
-	[d]* ) cp ~/.dwmxinit ~/.xinitrc -f && startx;;
-	[i]* ) cp ~/.i3xinit ~/.xinitrc -f && startx;;
-	[t]* ) clear;;
-	[T]* ) tmux;;
-	[w]* ) sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf -Dwext; ~/.scripts/login_script;;
-	* ) echo "invalid response, defaulting to tty";;
-esac
+while :
+do
+	echo -en "\033[0;36m\n\n  Welcome!\n\n   What do you want to open?\n\n\033[0;34m    [d/i] start the x server\n    [t] continue to tty\n    [T] open tmux in the ttyn\n    [w] Start wpa_supplicant\n\n\t"
+	read xtTw
+	case $xtTw in
+		[d]* ) cp ~/.dwmxinit ~/.xinitrc -f && startx;;
+		[i]* ) cp ~/.i3xinit ~/.xinitrc -f && startx;;
+		[t]* ) clear;;
+		[T]* ) tmux;;
+		[w]* ) sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf -Dwext;;
+		* ) echo "invalid response, defaulting to tty";;
+	esac
+done
