@@ -154,6 +154,18 @@ endif
 
 
 "
+" spellchecking
+"
+
+" Swedish
+noremap <localleader>scs :set spelllang=sv<CR> :setlocal spell<CR>
+" English
+noremap <localleader>sce :set spelllang=en<CR> :setlocal spell<CR>
+" off
+noremap <localleader>sco :setlocal nospell<CR>
+
+
+"
 " autocommands
 "
 
