@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 # simple x hotkey daemon
 sxhkd &
 
-# comption
+# compton
 compton &
 
 # wallpaper

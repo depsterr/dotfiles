@@ -1,11 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# fix broken binds
-
-bindkey '[3~' delete-char
-bindkey '[1~' beginning-of-line
-bindkey '[4~' end-of-line
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -81,6 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=$PATH:/sbin/:/home/deppy/.local/bin:/snap/bin/:~/.scripts/
+export PATH=$PATH:/home/deppy/.gem/ruby/2.6.0/bin:/home/deppy/.gem/ruby/2.6.0/gems
 export EDITOR=vim
 
 if [ "$TERM" = "linux" ]; then
@@ -127,3 +123,13 @@ fi
 alias zshconfig="vim ~/.zshrc"
 alias zshrcupdate="source ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
+
+
+# fix broken binds
+
+bindkey '[3~' delete-char
+bindkey '[1~' beginning-of-line
+bindkey '[4~' end-of-line
+
+# Aliases
+alias cls='clear && ls'
