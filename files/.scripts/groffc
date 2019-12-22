@@ -1,2 +1,2 @@
 #!/bin/sh
-refer -p ~/.groff/bibl.ms $1 | groff -e -U -ms -Tpdf > $2
+refer -p ~/.groff/bibl.ms $1 | groff -e -U -ms -Tpdf > $1.pdf

@@ -21,7 +21,7 @@ Plugin 'bling/vim-bufferline'
 call vundle#end()
 filetype plugin indent on
 
-" syntastic settings
+" Syntastic 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -42,7 +42,7 @@ set nu rnu
 " statusbar
 set laststatus=1
 
-" tab settings
+" tab size
 set ts=4 sw=4
 
 " colorscheme
@@ -54,22 +54,23 @@ set wildmenu
 
 
 "
-" Non-specific remaps
+" Remaps
 "
 
-" Map control+hjkl to switch split
+" switch splits
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-" leader key
+" localleader 
 let maplocalleader = "\<space>"
 
 
 "
-" Hex editing (I wish I knew how to make the variable buffer specific
+" Hex (I wish I knew how to make the variable buffer specific)
 "
+
 noremap <localleader>he :call HexToggle()<CR>
 
 let is_hex = 0
@@ -86,29 +87,28 @@ endfunction
 
 
 "
-" groff
+" Groff
 "
 noremap <localleader>grc :call GroffCompile(1)<CR>
 noremap <localleader>grlc :call GroffCompile(0)<CR>
 noremap <localleader>grp :call GroffPreview()<CR>
 
-" requires my groffc script
 function! GroffCompile(issilent)
 	if a:issilent
-	: silent ! groffc "%" "/tmp/%"
+	: silent ! refer -p ~/.groff/bibl.ms "%" | groff -e -U -ms -Tpdf > "%.pdf"
 	else
-	: ! groffc "%" "/tmp/%"
+	: ! refer -p ~/.groff/bibl.ms "%" | groff -e -U -ms -Tpdf > "%.pdf"
 	endif
 	: redraw!
 endfunction
 
 function! GroffPreview()
-	: silent ! zathura "/tmp/%" &
+	: silent ! zathura "%.pdf" &
 endfunction
 
 
 "
-" folding
+" Folding
 "
 set foldmethod=indent
 set foldlevelstart=99
@@ -117,7 +117,7 @@ noremap <localleader>fr zA
 
 
 "
-" zen mode
+" Zen
 "
 
 noremap <localleader>zm :call ZenToggle()<CR>
@@ -154,7 +154,7 @@ endif
 
 
 "
-" spellchecking
+" Spellchecking
 "
 
 " Swedish
@@ -164,9 +164,26 @@ noremap <localleader>sce :set spelllang=en<CR> :setlocal spell<CR>
 " off
 noremap <localleader>sco :setlocal nospell<CR>
 
+" next highlighted word
+noremap <localleader>scn ]s
+" previous highlighted word
+noremap <localleader>scN [s
+
+" change word
+noremap <localleader>scc z=
+
+" add word to dictionary
+noremap <localleader>sca zg
+" remove word from dictionary
+noremap <localleader>scr zug
+" ban word from dictionary
+noremap <localleader>scb zw
+" unban word from dictionary
+noremap <localleader>scu zuw
+
 
 "
-" autocommands
+" Autocommands
 "
 
 " comments
