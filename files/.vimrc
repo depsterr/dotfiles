@@ -1,24 +1,22 @@
+"
 " I honestly don't know
+"
+
 set nocompatible
 filetype off
+set t_ut=
 
+
+"
 " Vundle plugins
+"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-bufferline'
-Plugin 'lervag/vimtex'
-Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
-
-" nerdtree settings
-let NERDTreeShowHidden=1
-map <C-n> :NERDTreeToggle<CR>
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -27,23 +25,30 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
-" vimtex settings
-let g:vimtex_view_general_viewer = 'mupdf'
 
-" Set filetype of files
-au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
+"
+" General setup
+"
 
 " Enable syntax highlighting
 syntax enable
 
-" idk
-set t_ut=
-
 " set linenumbers
-set number relativenumber
+set nu rnu
 
 " enable statusbar
 set laststatus=1
+
+" tab settings
+set ts=4 sw=4
+
+" colorscheme
+colorscheme dcolor
+
+
+"
+" Non-specific remaps
+"
 
 " remove arrow keys (added this when I was new to get used to hjkl
 noremap <Up> <NOP>
@@ -59,6 +64,7 @@ noremap <C-l> <C-w>l
 
 " leader key
 let maplocalleader = "\<space>"
+
 
 "
 " Hex editing
@@ -81,9 +87,6 @@ endfunction
 "
 " groff
 "
-
-au BufReadPost,BufNewFile *.ms setlocal ft=groff
-
 noremap <localleader>grc :call GroffCompile(1)<CR>
 noremap <localleader>grlc :call GroffCompile(0)<CR>
 noremap <localleader>grp :call GroffPreview()<CR>
@@ -106,13 +109,16 @@ endfunction
 "
 " folding
 "
-
 set foldmethod=indent
 set foldlevelstart=99
 noremap <localleader>fo za
 noremap <localleader>fr zA
 
-" Zen mode
+
+"
+" zen mode
+"
+
 noremap <localleader>zm :call ZenToggle()<CR>
 
 let is_zen = 0
@@ -143,15 +149,16 @@ if g:is_zen
 	set noshowcmd
 endif
 
-" different colorscheme for tty
-if $DISPLAY == ""
-	colorscheme default
-else
-	colorscheme dcolor
-endif
 
-" tab settings
-set ts=4 sw=4
+"
+" autocommands
+"
 
 " comments
 au BufNewFile,BufRead * setlocal formatoptions-=cro
+
+" set filetype of groff files
+au BufReadPost,BufNewFile *.ms setlocal ft=groff
+
+" set filetype of asm files
+au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
