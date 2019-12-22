@@ -89,9 +89,9 @@ endfunction
 "
 " Groff
 "
-noremap <localleader>grc :call GroffCompile(1)<CR>
-noremap <localleader>grlc :call GroffCompile(0)<CR>
-noremap <localleader>grp :call GroffPreview()<CR>
+noremap <localleader>gc :call GroffCompile(1)<CR>
+noremap <localleader>glc :call GroffCompile(0)<CR>
+noremap <localleader>gp :call GroffPreview()<CR>
 
 function! GroffCompile(issilent)
 	if a:issilent
@@ -158,28 +158,28 @@ endif
 "
 
 " Swedish
-noremap <localleader>scs :set spelllang=sv<CR> :setlocal spell<CR>
+noremap <localleader>ss :set spelllang=sv<CR> :setlocal spell<CR>
 " English
-noremap <localleader>sce :set spelllang=en<CR> :setlocal spell<CR>
+noremap <localleader>se :set spelllang=en<CR> :setlocal spell<CR>
 " off
-noremap <localleader>sco :setlocal nospell<CR>
+noremap <localleader>so :setlocal nospell<CR>
 
 " next highlighted word
-noremap <localleader>scn ]s
+noremap <localleader>sn ]s
 " previous highlighted word
-noremap <localleader>scN [s
+noremap <localleader>sN [s
 
 " change word
-noremap <localleader>scc z=
+noremap <localleader>sc z=
 
 " add word to dictionary
-noremap <localleader>sca zg
+noremap <localleader>sa zg
 " remove word from dictionary
-noremap <localleader>scr zug
+noremap <localleader>sr zug
 " ban word from dictionary
-noremap <localleader>scb zw
+noremap <localleader>sb zw
 " unban word from dictionary
-noremap <localleader>scu zuw
+noremap <localleader>su zuw
 
 
 "
