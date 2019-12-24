@@ -22,6 +22,12 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	xbacklight -dec 1 -time 50
 
+shift + XF86MonBrightnessUp
+	xbacklight -inc 10 -time 50
+shift + XF86MonBrightnessDown
+	xbacklight -dec 10 -time 50
+
+
 super + XF86MonBrightnessUp
 	xbacklight -set 100 -time 50
 super + XF86MonBrightnessDown
@@ -36,8 +42,16 @@ super + Return
 	st
 
 # start ranger
-super + o
+super + r
 	st -e ranger
+
+# start python shell
+super + p
+	st -e python2
+
+# start cordless
+super + c
+	st -e cordless
 
 # start qutebrowser
 super + BackSpace
