@@ -57,14 +57,18 @@ set wildmenu
 " Remaps
 "
 
-" switch splits
+" splits
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+noremap <C-c> <C-w>c
 
 " localleader 
 let maplocalleader = "\<space>"
+
+" open current dir
+noremap <localleader>fd : vsplit .<CR>
 
 
 "
@@ -124,33 +128,35 @@ noremap <localleader>zm :call ZenToggle()<CR>
 
 let is_zen = 0
 
+au BufNewFile,BufRead * call ZenSet()
+
 function! ZenToggle()
 	if g:is_zen
 		let g:is_zen = 0
-		set nu rnu
-		set laststatus=1
-		set showmode
-		set ruler
-		set showcmd
+		call ZenSet()
 	else
 		let g:is_zen = 1
+		call ZenSet()
+	endif
+endfunction	
+
+function! ZenSet()
+	if g:is_zen
 		set nonu nornu
 		set laststatus=0
 		set noshowmode
 		set noruler
 		set noshowcmd
-		:
+		let g:bufferline_echo = 0
+	else
+		set nu rnu
+		set laststatus=1
+		set showmode
+		set ruler
+		set showcmd
+		let g:bufferline_echo = 1
 	endif
 endfunction	
-
-if g:is_zen
-	set nonu nornu
-	set laststatus=0
-	set noshowmode
-	set noruler
-	set noshowcmd
-	:
-endif
 
 
 "
@@ -163,6 +169,8 @@ noremap <localleader>ss :set spelllang=sv<CR> :setlocal spell<CR>
 noremap <localleader>se :set spelllang=en<CR> :setlocal spell<CR>
 " off
 noremap <localleader>so :setlocal nospell<CR>
+" programmer
+noremap <localleader>sp :SyntasticCheck<CR>
 
 " next highlighted word
 noremap <localleader>sn ]s
@@ -194,3 +202,6 @@ au BufReadPost,BufNewFile *.ms setlocal ft=groff
 
 " set filetype of asm files
 au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
+
+" resize automatically
+autocmd VimResized * <C-w>=

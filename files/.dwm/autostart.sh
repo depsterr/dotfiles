@@ -3,6 +3,9 @@
 # simple x hotkey daemon
 sxhkd &
 
+# xclip
+xclip &
+
 # compton
 compton &
 

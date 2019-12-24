@@ -115,7 +115,9 @@ set status_display_program=
 set time_show_leading_zero=true
 set wrap_search=true
 bind browser backspace browser-up
+bind browser h browser-up
 bind browser i toggle show_hidden
+bind browser l win-activate
 bind browser space win-activate
 bind browser u win-update
 bind common ! push shell 
@@ -141,7 +143,7 @@ bind common G win-bottom
 bind common I echo {}
 bind common L push live-filter 
 bind common M toggle play_library
-bind common N search-prev
+bind common N player-prev 
 bind common P win-mv-before
 bind common U win-update-cache
 bind common [ vol +1% +0
@@ -176,7 +178,7 @@ bind common m toggle aaa_mode
 bind common mlb_click_selected win-activate
 bind common mouse_scroll_down win-down
 bind common mouse_scroll_up win-up
-bind common n search-next
+bind common n player-next
 bind common o toggle play_sorted
 bind common p win-mv-after
 bind common page_down win-page-down
