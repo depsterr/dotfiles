@@ -1,3 +1,4 @@
+fset 90s=date>=1990&date<2000
 set color_cmdline_attr=default
 set continue=true
 a
