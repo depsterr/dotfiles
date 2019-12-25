@@ -10,7 +10,7 @@ do
 	case $xtTw in
 		[d]* ) cp ~/.dwmxinit ~/.xinitrc -f && startx;;
 		[i]* ) cp ~/.i3xinit ~/.xinitrc -f && startx;;
-		[t]* ) clear;;
+		[t]* ) exit;;
 		[T]* ) tmux;;
 		[w]* ) sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf -Dwext;;
 		* ) echo "invalid response, defaulting to tty";;
