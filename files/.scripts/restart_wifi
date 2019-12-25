@@ -1,0 +1,3 @@
+#!/bin/sh
+disable_wifi
+enable_wifi

@@ -1,9 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/deppy/projects/c/sync'
+let g:netrw_dirhist_0='/home/deppy'
+let g:netrw_dirhist_9='/home/deppy/projects/hacking'
+let g:netrw_dirhist_8='/home/deppy/Documents/groff/learning/second'
 let g:netrw_dirhist_7='/home/deppy/projects/c/opengl/playground/lightning/src'
 let g:netrw_dirhist_6='/home/deppy/projects/c/opengl/playground/lightning'
 let g:netrw_dirhist_5='/home/deppy/projects/c/opengl/playground'
 let g:netrw_dirhist_4='/home/deppy/projects/c/opengl'
 let g:netrw_dirhist_3='/home/deppy/projects/c'
 let g:netrw_dirhist_2='/home/deppy/projects'
-let g:netrw_dirhist_1='/home/deppy/projects/c/opengl/playground/cubes/src'

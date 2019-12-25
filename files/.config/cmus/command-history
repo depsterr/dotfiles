@@ -1,2 +1,20 @@
+set color_cmdline_attr=default
+set continue=true
+a
+filter 
+sort 
+toggle shuffle
+shuffle 0
+shuffle
+bind common <key> clear
+clear
+bind -f common N player-prev 
+bind -f common n player-next
+bind -f browser backspace browser-up
+bind -f browser l win-activate
+player-stop
+bind -f browser h browser-up
+ne
+mkdir
 next
 live-filter 
