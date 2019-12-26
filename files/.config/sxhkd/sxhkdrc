@@ -49,8 +49,12 @@ super + r
 super + p
 	st -e python2
 
-# start cordless
+# start cmus
 super + c
+	st -e cmus
+
+# start cordless
+super + shift + c
 	st -e cordless
 
 # start qutebrowser
