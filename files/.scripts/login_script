@@ -1,12 +1,12 @@
 #! /bin/sh
 # startx if logging in in the startup tty
 clear
-echo "\n\n"
+echo -en "\n\n"
 while :
 do
 	clear
 	neofetch --ascii
-	echo "\033[0;36m\n\n  Welcome!\n\n   What do you want to open?\n\n\033[0;34m    [d/i] start the x server\n    [t] continue to tty\n    [T] open tmux in the ttyn\n    [w] Start wpa_supplicant\n\n\t"
+	echo -en "\033[0;36m\n\n  Welcome!\n\n   What do you want to open?\n\n\033[0;34m    [d/i] start the x server\n    [t] continue to tty\n    [T] open tmux in the ttyn\n    [w] Start wpa_supplicant\n\n\t"
 	read xtTw
 	case $xtTw in
 		[d]* ) cp ~/.dwmxinit ~/.xinitrc -f && startx;;
