@@ -1,0 +1,10 @@
+#!/bin/sh
+
+VPNCLIENT=torguard
+TORRENTCLIENT=qbittorrent
+
+sudo $VPNCLIENT &
+echo "Press enter after having started VPN"
+read
+$TORRENTCLIENT &
+disown

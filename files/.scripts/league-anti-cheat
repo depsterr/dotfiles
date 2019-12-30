@@ -1,0 +1,3 @@
+#!/bin/sh
+echo 0 > /proc/sys/abi/vsyscall32
+cat /proc/sys/abi/vsyscall32 # < doesn't work and I'm not sure why...
