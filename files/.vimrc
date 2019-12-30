@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'bling/vim-bufferline'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -52,6 +53,9 @@ colorscheme dcolor
 set wildmode=longest,list,full
 set wildmenu
 
+" splits
+set splitbelow splitright
+
 
 "
 " Remaps
@@ -70,12 +74,21 @@ let maplocalleader = "\<space>"
 " open current dir
 noremap <localleader>fd : vsplit .<CR>
 
+" goyo
+noremap <localleader>zm : Goyo<CR>
+
+" hex
+noremap <localleader>he :call HexToggle()<CR>
+
+" groff
+noremap <localleader>gc :call GroffCompile(1)<CR>
+noremap <localleader>glc :call GroffCompile(0)<CR>
+noremap <localleader>gp :call GroffPreview()<CR>
 
 "
 " Hex (I wish I knew how to make the variable buffer specific)
 "
 
-noremap <localleader>he :call HexToggle()<CR>
 
 let is_hex = 0
 
@@ -93,9 +106,6 @@ endfunction
 "
 " Groff
 "
-noremap <localleader>gc :call GroffCompile(1)<CR>
-noremap <localleader>glc :call GroffCompile(0)<CR>
-noremap <localleader>gp :call GroffPreview()<CR>
 
 function! GroffCompile(issilent)
 	if a:issilent
@@ -118,46 +128,6 @@ set foldmethod=indent
 set foldlevelstart=99
 noremap <localleader>fo za
 noremap <localleader>fr zA
-
-
-"
-" Zen
-"
-
-noremap <localleader>zm :call ZenToggle()<CR>
-
-let is_zen = 0
-
-au BufNewFile,BufRead * call ZenSet()
-
-function! ZenToggle()
-	if g:is_zen
-		let g:is_zen = 0
-		call ZenSet()
-	else
-		let g:is_zen = 1
-		call ZenSet()
-	endif
-endfunction	
-
-function! ZenSet()
-	if g:is_zen
-		set nonu nornu
-		set laststatus=0
-		set noshowmode
-		set noruler
-		set noshowcmd
-		let g:bufferline_echo = 0
-	else
-		set nu rnu
-		set laststatus=1
-		set showmode
-		set ruler
-		set showcmd
-		let g:bufferline_echo = 1
-	endif
-endfunction	
-
 
 "
 " Spellchecking
