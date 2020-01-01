@@ -53,6 +53,9 @@ colorscheme dcolor
 set wildmode=longest,list,full
 set wildmenu
 
+" hard linebreak for complying with styleguide and easier writing
+set textwidth=80
+
 
 "
 " Remaps
