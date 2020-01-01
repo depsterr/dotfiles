@@ -1,0 +1,2 @@
+#!/bin/sh
+find ~/images/bg | sxiv -io | xargs -r feh --bg-fill

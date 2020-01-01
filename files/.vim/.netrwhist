@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/etc/grub.d'
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/deppy/.scripts'
+let g:netrw_dirhist_3='/home/deppy/Arduino'
 let g:netrw_dirhist_2='/home/deppy/.config/sxhkd'
 let g:netrw_dirhist_1='/home/deppy/projects/c/sync'
 let g:netrw_dirhist_0='/home/deppy'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_8='/home/deppy/Documents/groff/learning/second'
 let g:netrw_dirhist_7='/home/deppy/projects/c/opengl/playground/lightning/src'
 let g:netrw_dirhist_6='/home/deppy/projects/c/opengl/playground/lightning'
 let g:netrw_dirhist_5='/home/deppy/projects/c/opengl/playground'
-let g:netrw_dirhist_4='/home/deppy/projects/c/opengl'
