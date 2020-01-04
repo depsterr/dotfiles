@@ -102,7 +102,7 @@ endfunction
 "
 noremap <localleader>gc :call GroffCompile(1)<CR>
 noremap <localleader>glc :call GroffCompile(0)<CR>
-noremap <localleader>gp :call GroffPreview()<CR>
+noremap <localleader>dp :call DocPreview()<CR>
 
 function! GroffCompile(issilent)
 	if a:issilent
@@ -113,8 +113,23 @@ function! GroffCompile(issilent)
 	: redraw!
 endfunction
 
-function! GroffPreview()
+function! DocPreview()
 	: silent ! zathura "%.pdf" &
+endfunction
+
+"
+" Markdown
+"
+noremap <localleader>mc :call MdCompile(1)<CR>
+" noremap <localleader>dp :call DocPreview()<CR> Already defined in the 'Groff' section
+
+function! MdCompile(issilent)
+	if a:issilent
+	: silent ! pandoc % -o "%.pdf"
+	else
+	: ! pandoc % -o "%.pdf"
+	endif
+	: redraw!
 endfunction
 
 
@@ -167,6 +182,9 @@ au BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " set filetype of groff files
 au BufReadPost,BufNewFile *.ms setlocal ft=groff
+
+" set goyo mode for text
+au BufReadPost,BufNewFile *.ms,*.md,*.tex Goyo
 
 " set filetype of asm files
 au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
