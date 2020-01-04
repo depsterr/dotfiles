@@ -73,6 +73,10 @@ super + s
 super + v
 	discord
 
+# start lutis
+super + g
+	lutris
+
 # screenshot script
 Print
 	screenshot
