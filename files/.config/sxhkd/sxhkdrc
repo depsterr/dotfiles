@@ -70,7 +70,7 @@ super + s
 	steam
 
 # start discord
-super + shift + d
+super + v
 	discord
 
 # screenshot script
