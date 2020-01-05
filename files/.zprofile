@@ -2,5 +2,4 @@ export PATH=$PATH:/home/deppy/.gem/ruby/2.6.0/bin:/home/deppy/.gem/ruby/2.6.0/ge
 if [ "$(tty)" = "/dev/tty1" ]; then
 	sh ~/.scripts/login_script
 fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.scripts/"
