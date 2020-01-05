@@ -65,8 +65,12 @@ super + BackSpace
 super + d
 	dmenu_run
 
-# start steam
+# set wallpaper  
 super + s
+	setbg
+
+# start steam
+super + shift + s
 	steam
 
 # start discord
