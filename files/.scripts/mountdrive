@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Basically just ripping of luke smiths mount script with some minor
+# improvements added
+
+MNTDRIVE=`lsblk -lp | awk '/part $/ {printf $1 " (" $4 ")\n"}' | dmenu | awk '{print $1}'`
+[ -z "$MNTDRIVE" ] && exit
+MNTPOINT=`find /mnt | dmenu -p "Choose mount point"`
+[ -z "$MNTPOINT" ] && exit
+sudo mount $MNTDRIVE $MNTPOINT
