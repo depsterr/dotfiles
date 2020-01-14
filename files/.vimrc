@@ -19,6 +19,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/goyo.vim'
+Plugin 'sirtaj/vim-openscad'
 call vundle#end()
 filetype plugin indent on
 
@@ -53,8 +54,6 @@ colorscheme dcolor
 set wildmode=longest,list,full
 set wildmenu
 
-" hard linebreak for complying with styleguide and easier writing
-set textwidth=80
 
 
 "
@@ -185,6 +184,9 @@ au BufReadPost,BufNewFile *.ms setlocal ft=groff
 
 " set goyo mode for text
 au BufReadPost,BufNewFile *.ms,*.md,*.tex Goyo
+
+" hard linebreak for complying with styleguide and easier writing
+au BufReadPost,BufNewFile *.c,*.ms,*md,*.tex set textwidth=80
 
 " set filetype of asm files
 au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
