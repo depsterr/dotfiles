@@ -19,6 +19,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/goyo.vim'
+Plugin 'sirtaj/vim-openscad'
 call vundle#end()
 filetype plugin indent on
 
@@ -100,8 +101,12 @@ endfunction
 "
 " Groff
 "
+
+" Groff Compile
 noremap <localleader>gc :call GroffCompile(1)<CR>
+" Groff Loud Compile
 noremap <localleader>glc :call GroffCompile(0)<CR>
+" Document Preview
 noremap <localleader>dp :call DocPreview()<CR>
 
 function! GroffCompile(issilent)
@@ -120,8 +125,21 @@ endfunction
 "
 " Markdown
 "
+
+" Markdown Compile
 noremap <localleader>mc :call MdCompile(1)<CR>
-" noremap <localleader>dp :call DocPreview()<CR> Already defined in the 'Groff' section
+" Markdown Loud Compile
+noremap <localleader>mlc :call MdCompile(1)<CR>
+" Document Preview
+" noremap <localleader>dp :call DocPreview()<CR> 
+
+" Slides
+" Markdown Slides Compile
+noremap <localleader>msc :call MdsCompile(1)<CR>
+" Markdown Slides Loud Compile
+noremap <localleader>mslc :call MdsCompile(1)<CR>
+" Markdown Slides Preview
+noremap <localleader>msp :call SlidesPreview()<CR> 
 
 function! MdCompile(issilent)
 	if a:issilent
@@ -130,6 +148,19 @@ function! MdCompile(issilent)
 	: ! pandoc % -o "%.pdf"
 	endif
 	: redraw!
+endfunction
+
+function! MdsCompile(issilent)
+	if a:issilent
+	: silent ! pandoc -t slidy -s % -o "%.html"
+	else
+	: ! pandoc -t slidy -s % -o "%.html"
+	endif
+	: redraw!
+endfunction
+
+function! SlidesPreview()
+	: silent ! surf "%.html" &
 endfunction
 
 
@@ -147,9 +178,9 @@ noremap <localleader>fr zA
 "
 
 " Swedish
-noremap <localleader>ss :set spelllang=sv<CR> :setlocal spell<CR>
+noremap <localleader>ss :set spelllang=sv spell<CR>
 " English
-noremap <localleader>se :set spelllang=en<CR> :setlocal spell<CR>
+noremap <localleader>se :set spelllang=en spell<CR>
 " off
 noremap <localleader>so :setlocal nospell<CR>
 " programmer
