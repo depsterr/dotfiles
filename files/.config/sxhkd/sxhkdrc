@@ -49,6 +49,10 @@ super + r
 super + p
 	st -e python2
 
+# start ruby shell
+super + i
+	st -e irb --multiline
+
 # start cmus
 super + c
 	st -e cmus

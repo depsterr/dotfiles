@@ -54,8 +54,11 @@ colorscheme dcolor
 set wildmode=longest,list,full
 set wildmenu
 
+<<<<<<< HEAD
+=======
 " linebreak
 set lbr
+>>>>>>> 62bcced649af27a8412c1da427ee085fdd464cda
 
 
 "
@@ -217,12 +220,17 @@ au BufReadPost,BufNewFile *.ms setlocal ft=groff
 " set goyo mode for text
 au BufReadPost,BufNewFile *.ms,*.md,*.tex Goyo
 
+<<<<<<< HEAD
+" hard linebreak for complying with styleguide and easier writing
+au BufReadPost,BufNewFile *.c,*.ms,*md,*.tex set textwidth=80
+=======
 " navigating multi lines with j and k
 au BufReadPost,BufNewFile *.ms,*.md,*.tex noremap j gj
 au BufReadPost,BufNewFile *.ms,*.md,*.tex noremap k gk
 
 " set linebreak for c files
 au BufReadPost,BufNewFile *.c setlocal textwidth=80
+>>>>>>> 62bcced649af27a8412c1da427ee085fdd464cda
 
 " set filetype of asm files
 au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
