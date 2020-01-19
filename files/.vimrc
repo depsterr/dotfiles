@@ -106,17 +106,24 @@ endfunction
 noremap <localleader>gc :call GroffCompile(1)<CR>
 " Groff Loud Compile
 noremap <localleader>glc :call GroffCompile(0)<CR>
+" Groff Compile To Preview
+noremap <localleader>gp :call GroffPreview()<CR>
 " Document Preview
 noremap <localleader>dp :call DocPreview()<CR>
 
 function! GroffCompile(issilent)
 	if a:issilent
-	: silent ! refer -p ~/.groff/bibl.ms "%" | groff -e -U -ms -Tpdf > "%.pdf"
+	: silent ! refer -p ~/.groff/bibl.ms "%" | groff -e -Kutf8 -U -ms -Tpdf > "%.pdf"
 	else
-	: ! refer -p ~/.groff/bibl.ms "%" | groff -e -U -ms -Tpdf > "%.pdf"
+	: ! refer -p ~/.groff/bibl.ms "%" | groff -Kutf8 -e -U -ms -Tpdf > "%.pdf"
 	endif
 	: redraw!
 endfunction
+
+function! GroffPreview()
+	: silent ! refer -p ~/.groff/bibl.ms "%" | groff -e -Kutf8 -U -ms -Tpdf | zathura - &
+endfunction
+
 
 function! DocPreview()
 	: silent ! zathura "%.pdf" &
