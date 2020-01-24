@@ -30,6 +30,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
+" netrw (technically not a plugin)
+
+let g:netrw_dirhistmax=0
+let g:netrw_dirhistcnt=0
+
 
 "
 " General setup
@@ -77,6 +82,9 @@ noremap <localleader>fd : vsplit .<CR>
 
 " goyo (zm stands for zenmode)
 noremap <localleader>zm : Goyo<CR>
+
+" indent lines
+noremap <tab> I<tab><esc>j
 
 
 "
