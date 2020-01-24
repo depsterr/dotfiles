@@ -1,11 +1,3 @@
 #!/bin/sh
-[ -z $1 ] || [ -z $2 ] && exit 0
-
-echo Adding wifi connnection!
-
-echo "network={" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "	ssid=\"$1\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "	psk=\"$2\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "}" >> /etc/wpa_supplicant/wpa_supplicant.conf
-
-exit 1
+[ -z $2 ] && exit 0
+echo "network={\n\tssid=\"$1\"\n\tpsk=\"$2\"\n}" >> /etc/wpa_supplicant/wpa_supplicant.conf
