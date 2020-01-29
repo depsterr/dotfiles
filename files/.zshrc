@@ -13,7 +13,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:/sbin/:/home/deppy/.local/bin:/snap/bin/:~/.scripts/:/home/deppy/.gem/ruby/2.6.0/bin:/home/deppy/.gem/ruby/2.6.0/gems
 export EDITOR=vim
 
 if [ "$TERM" = "linux" ]; then

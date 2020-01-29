@@ -84,7 +84,7 @@ noremap <localleader>fd : vsplit .<CR>
 noremap <localleader>zm : Goyo<CR>
 
 " indent lines
-noremap <tab> I<tab><esc>j
+noremap <tab> I<tab><esc>
 
 
 "
@@ -240,4 +240,4 @@ au BufReadPost,BufNewFile *.ms,*.md,*.tex noremap k gk
 au BufReadPost,BufNewFile *.c setlocal textwidth=80
 
 " set filetype of asm files
-au BufReadPost,BufNewFile *.nasm,*.asm setlocal ft=nasm
+au BufReadPost,BufNewFile *.s,*.nasm,*.asm setlocal ft=nasm
