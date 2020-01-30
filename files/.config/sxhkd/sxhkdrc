@@ -16,7 +16,6 @@ XF86AudioMicMute
 #
 # Brightness
 #
-
 XF86MonBrightnessUp
 	xbacklight -inc 1 -time 50
 XF86MonBrightnessDown
@@ -57,9 +56,9 @@ super + c
 super + shift + c
 	st -e cordless
 
-# start qutebrowser
+# start brave
 super + BackSpace
-	qutebrowser
+	brave
 
 # start dmenu
 super + d
