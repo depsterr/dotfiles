@@ -11,24 +11,18 @@ set t_ut=
 " Plugins
 "
 
+
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/goyo.vim'
 Plugin 'sirtaj/vim-openscad'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
-
-" Syntastic 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " netrw (technically not a plugin)
 
@@ -84,7 +78,8 @@ noremap <localleader>fd : vsplit .<CR>
 noremap <localleader>zm : Goyo<CR>
 
 " indent lines
-noremap <tab> I<tab><esc>
+noremap <tab> >>
+noremap <S-tab> <<
 
 
 "

@@ -16,6 +16,7 @@ XF86AudioMicMute
 #
 # Brightness
 #
+
 XF86MonBrightnessUp
 	xbacklight -inc 1 -time 50
 XF86MonBrightnessDown
@@ -73,8 +74,12 @@ super + shift + s
 	steam
 
 # start discord
-super + v
+super + shift + v
 	discord
+
+# start vim
+super + v
+	st -e vim ~
 
 # start lutis
 super + g
