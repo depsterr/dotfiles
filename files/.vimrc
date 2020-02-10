@@ -28,6 +28,7 @@ filetype plugin indent on
 
 let g:netrw_dirhistmax=0
 let g:netrw_dirhistcnt=0
+let g:netrw_localrmdir="rm -r"
 
 
 "
