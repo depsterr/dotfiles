@@ -21,6 +21,8 @@ Plugin 'bling/vim-bufferline' " Just tells me what buffers I have open
 Plugin 'junegunn/goyo.vim' " Great plugin for making text editing pretty when not writing code
 Plugin 'sirtaj/vim-openscad' " Openscad syntax highlighting
 Plugin 'tpope/vim-fugitive' " Git integration
+Plugin 'tpope/vim-surround' " Vim spirited surrounding
+Plugin 'tpope/vim-commentary' " Vim spirited commenting
 call vundle#end()
 filetype plugin indent on
 
