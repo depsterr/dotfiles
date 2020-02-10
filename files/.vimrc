@@ -15,12 +15,12 @@ set t_ut=
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'bling/vim-bufferline'
-Plugin 'junegunn/goyo.vim'
-Plugin 'sirtaj/vim-openscad'
-Plugin 'tpope/vim-fugitive'
+Plugin 'VundleVim/Vundle.vim' " The plugin manager itself
+Plugin 'octol/vim-cpp-enhanced-highlight' " Nothing fancy, just helps a bit
+Plugin 'bling/vim-bufferline' " Just tells me what buffers I have open
+Plugin 'junegunn/goyo.vim' " Great plugin for making text editing pretty when not writing code
+Plugin 'sirtaj/vim-openscad' " Openscad syntax highlighting
+Plugin 'tpope/vim-fugitive' " Git integration
 call vundle#end()
 filetype plugin indent on
 
@@ -56,6 +56,9 @@ set wildmenu
 
 " linebreak
 set lbr
+
+" format options
+set formatoptions-=cro
 
 
 "
@@ -218,9 +221,6 @@ noremap <localleader>su zuw
 "
 " Autocommands
 "
-
-" comments
-au BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " set filetype of groff files
 au BufReadPost,BufNewFile *.ms setlocal ft=groff
