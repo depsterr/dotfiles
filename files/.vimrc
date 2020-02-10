@@ -15,18 +15,27 @@ set t_ut=
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim' " The plugin manager itself
-Plugin 'octol/vim-cpp-enhanced-highlight' " Nothing fancy, just helps a bit
-Plugin 'bling/vim-bufferline' " Just tells me what buffers I have open
-Plugin 'junegunn/goyo.vim' " Great plugin for making text editing pretty when not writing code
-Plugin 'sirtaj/vim-openscad' " Openscad syntax highlighting
-Plugin 'tpope/vim-fugitive' " Git integration
-Plugin 'tpope/vim-surround' " Vim spirited surrounding
-Plugin 'tpope/vim-commentary' " Vim spirited commenting
+Plugin 'VundleVim/Vundle.vim'
+
+	" Syntax highlighting
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'sirtaj/vim-openscad'
+
+	" Appearance
+Plugin 'bling/vim-bufferline'
+Plugin 'junegunn/goyo.vim'
+
+	" Functionallity
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+
+	" Command integration
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()
 filetype plugin indent on
 
-" netrw (technically not a plugin)
+" netrw
 
 let g:netrw_dirhistmax=0
 let g:netrw_dirhistcnt=0
@@ -58,9 +67,6 @@ set wildmenu
 
 " linebreak
 set lbr
-
-" format options
-set formatoptions-=cro
 
 
 "
@@ -223,6 +229,9 @@ noremap <localleader>su zuw
 "
 " Autocommands
 "
+
+" format options
+au BufReadPost,BufNewFile * setlocal formatoptions-=cro
 
 " set filetype of groff files
 au BufReadPost,BufNewFile *.ms setlocal ft=groff
