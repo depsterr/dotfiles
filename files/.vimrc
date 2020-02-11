@@ -2,15 +2,13 @@
 " I honestly don't know
 "
 
-set nocompatible
-filetype off
+set nocp
 set t_ut=
 
 
 "
 " Plugins
 "
-
 
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,6 +26,7 @@ Plugin 'junegunn/goyo.vim'
 	" Functionallity
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'christoomey/vim-tmux-navigator'
 
 	" Command integration
 Plugin 'tpope/vim-fugitive'
@@ -73,18 +72,12 @@ set lbr
 " Remaps
 "
 
-" splits
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" quick exiting
 noremap <C-c> :q<CR>
+noremap <C-d> :q<CR>
 
 " localleader 
 let maplocalleader = "\<space>"
-
-" open current dir
-noremap <localleader>fd : vsplit .<CR>
 
 " goyo (zm stands for zenmode)
 noremap <localleader>zm : Goyo<CR>
@@ -156,6 +149,7 @@ noremap <localleader>mlc :call MdCompile(1)<CR>
 " noremap <localleader>dp :call DocPreview()<CR> 
 
 " Slides
+
 " Markdown Slides Compile
 noremap <localleader>msc :call MdsCompile(1)<CR>
 " Markdown Slides Loud Compile
