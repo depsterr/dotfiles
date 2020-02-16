@@ -12,6 +12,9 @@ compton &
 # wallpaper
 ~/.fehbg &
 
+# xmodmap
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap &
+
 # bar
 # for whatever reason < /sys/class/power_supply/BAT1/capacity doesn't work, so I have to use cat :/ (works in bash and zsh, but not in dash)
 while true; do

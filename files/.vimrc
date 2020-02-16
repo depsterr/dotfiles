@@ -76,12 +76,6 @@ set lbr
 noremap <C-c> :q<CR>
 noremap <C-d> :q<CR>
 
-" splits
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 " localleader 
 let maplocalleader = "\<space>"
 
