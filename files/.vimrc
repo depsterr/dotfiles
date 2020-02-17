@@ -38,7 +38,7 @@ filetype plugin indent on
 
 let g:netrw_dirhistmax=0
 let g:netrw_dirhistcnt=0
-let g:netrw_localrmdir="rm -r"
+let g:netrw_localrmdir="rm -rf"
 
 
 "
@@ -93,17 +93,28 @@ noremap <S-tab> <<
 
 noremap <localleader>he :call HexToggle()<CR>
 
-let is_hex = 0
+" defualt each buffer to not be hex
+au BufReadPost,BufNewFile * let b:is_hex = 0
 
 function! HexToggle()
-	if g:is_hex
-		let g:is_hex = 0
+	if b:is_hex
+		let b:is_hex = 0
 		:%!xxd -r
 	else
-		let g:is_hex = 1
+		let b:is_hex = 1
 		:%!xxd
 	endif
 endfunction	
+
+" defualt each buffer to not be hex
+au BufWritepre * call HexSafeWrite()
+
+function! HexSafeWrite()
+	if b:is_hex
+		let b:is_hex = 0
+		:%!xxd -r
+	endif
+endfunction
 
 
 "
