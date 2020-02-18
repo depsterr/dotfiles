@@ -27,6 +27,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'depsterr/hex.vim'
 
 	" Command integration
 Plugin 'tpope/vim-fugitive'
@@ -86,35 +87,8 @@ noremap <localleader>zm : Goyo<CR>
 noremap <tab> >>
 noremap <S-tab> <<
 
-
-"
-" Hex (I wish I knew how to make the variable buffer specific)
-"
-
-noremap <localleader>he :call HexToggle()<CR>
-
-" defualt each buffer to not be hex
-au BufReadPost,BufNewFile * let b:is_hex = 0
-
-function! HexToggle()
-	if b:is_hex
-		let b:is_hex = 0
-		:%!xxd -r
-	else
-		let b:is_hex = 1
-		:%!xxd
-	endif
-endfunction	
-
-" defualt each buffer to not be hex
-au BufWritepre * call HexSafeWrite()
-
-function! HexSafeWrite()
-	if b:is_hex
-		let b:is_hex = 0
-		:%!xxd -r
-	endif
-endfunction
+" hex editing
+noremap <localleader>he :HexToggle<CR>
 
 
 "
@@ -147,6 +121,7 @@ endfunction
 function! DocPreview()
 	: silent ! zathura "%.pdf" &
 endfunction
+
 
 "
 " Markdown

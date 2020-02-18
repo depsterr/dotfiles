@@ -1,3 +1,6 @@
 [submodule "files/.vim/bundle/vim-tmux-navigator"]
 	path = files/.vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "files/.vim/bundle/hex.vim"]
+	path = files/.vim/bundle/hex.vim
+	url = https://github.com/depsterr/hex.vim
