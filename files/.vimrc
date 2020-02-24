@@ -216,6 +216,9 @@ au BufReadPost,BufNewFile * setlocal formatoptions-=cro
 " set filetype of groff files
 au BufReadPost,BufNewFile *.ms setlocal ft=groff
 
+" set filetype of latex files
+au BufReadPost,BufNewFile *.tex setlocal ft=latex
+
 " set goyo mode for text
 au BufReadPost,BufNewFile *.ms,*.md,*.tex Goyo
 
