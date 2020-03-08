@@ -4,11 +4,10 @@ while :
 do
 	clear
 	neofetch --ascii
-	echo \033[0;36m\n\n  Welcome!\n\n   What do you want to open?\n\n\033[0;34m    [d/i] start the x server\n    [t] continue to tty\n    [T] open tmux in the ttyn\n    [w] Start wpa_supplicant\n\n\t"
+	echo "\033[0;36m\n\n  Welcome!\n\n   What do you want to open?\n\n\033[0;34m    [d] start the x server\n    [t] continue to tty\n    [T] open tmux in the ttyn\n    [w] Start wpa_supplicant\n\n\t"
 	read xtTw
 	case $xtTw in
 		[d]* ) cp ~/.dwmxinit ~/.xinitrc -f && startx;;
-		[i]* ) cp ~/.i3xinit ~/.xinitrc -f && startx;;
 		[t]* ) exit;;
 		[T]* ) tmux;;
 		[w]* ) sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf -Dwext;;

@@ -85,7 +85,7 @@ noremap <localleader>zm : Goyo<CR>
 
 " indent lines
 noremap <tab> >>
-noremap <C-tab> <<
+noremap <S-tab> <<
 
 " hex editing
 noremap <localleader>he :HexToggle<CR>
@@ -130,7 +130,7 @@ endfunction
 " Markdown Compile
 noremap <localleader>mc :call MdCompile(1)<CR>
 " Markdown Loud Compile
-noremap <localleader>mlc :call MdCompile(0)<CR>
+noremap <localleader>mlc :call MdCompile(1)<CR>
 " Document Preview
 " noremap <localleader>dp :call DocPreview()<CR> 
 
@@ -139,7 +139,7 @@ noremap <localleader>mlc :call MdCompile(0)<CR>
 " Markdown Slides Compile
 noremap <localleader>msc :call MdsCompile(1)<CR>
 " Markdown Slides Loud Compile
-noremap <localleader>mslc :call MdsCompile(0)<CR>
+noremap <localleader>mslc :call MdsCompile(1)<CR>
 " Markdown Slides Preview
 noremap <localleader>msp :call SlidesPreview()<CR> 
 
@@ -163,30 +163,6 @@ endfunction
 
 function! SlidesPreview()
 	: silent ! surf "%.html" &
-endfunction
-
-"
-" Latex
-"
-
-" Latex Compile
-noremap <localleader>lc :call TexCompile(1)<CR>
-" Latex Loud Compile
-noremap <localleader>llc :call TexCompile(0)<CR>
-" Document Preview
-" noremap <localleader>dp :call DocPreview()<CR> 
-
-function! TexCompile(issilent)
-	if a:issilent
-	: silent ! pdflatex %
-	" I swear to christ if only pdflatex let me output to whatever file I wanted I wouldn't need to do this shit
-	: silent ! mv $(echo % | sed 's/\.tex/.pdf/') "%.pdf"
-	else
-	: ! pdflatex %
-	" I swear to christ if only pdflatex let me output to whatever file I wanted I wouldn't need to do this shit
-	: silent ! mv $(echo % | sed 's/\.tex/.pdf/') "%.pdf"
-	endif
-	: redraw!
 endfunction
 
 
@@ -239,9 +215,6 @@ au BufReadPost,BufNewFile * setlocal formatoptions-=cro
 
 " set filetype of groff files
 au BufReadPost,BufNewFile *.ms setlocal ft=groff
-
-" set filetype of latex files
-au BufReadPost,BufNewFile *.tex setlocal ft=tex
 
 " set goyo mode for text
 au BufReadPost,BufNewFile *.ms,*.md,*.tex Goyo
