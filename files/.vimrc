@@ -185,8 +185,6 @@ noremap <localleader>ss :set spelllang=sv spell<CR>
 noremap <localleader>se :set spelllang=en spell<CR>
 " off
 noremap <localleader>so :setlocal nospell<CR>
-" programmer
-noremap <localleader>sp :SyntasticCheck<CR>
 
 " next highlighted word
 noremap <localleader>sn ]s
