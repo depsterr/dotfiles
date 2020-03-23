@@ -59,7 +59,7 @@ set laststatus=1
 set ts=4 sw=4
 
 " colorscheme
-colorscheme monokai
+colorscheme dcolor
 
 " tabcomplete
 set wildmode=longest,list,full
