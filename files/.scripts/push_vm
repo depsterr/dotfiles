@@ -1,0 +1,10 @@
+#!/bin/sh
+read -p "kali or fireeye? " read
+case $read in 
+	kali)
+	scp -r ~/vm/kali/Kali\ Linux/Kali\ Linux.vdi vm@depsterr.com:/home/vm/kali/Kali\ Linux/Kali\ Linux.vdi
+	;;
+	fireeye)
+	scp -r ~/vm/fireeye/fireeye/fireye.vdi vm@depsterr.com:/home/vm/fireeye/fireeye/fireeye.vdi
+	;;
+esac
