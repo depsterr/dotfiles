@@ -21,7 +21,6 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'sirtaj/vim-openscad'
 
 	" Appearance
-Plugin 'itchyny/lightline.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/goyo.vim'
 
@@ -58,9 +57,6 @@ set nu rnu
 
 " statusbar
 set laststatus=2
-
-" hide insert mode in command bar
-set noshowmode
 
 " tab size
 set ts=4 sw=4
