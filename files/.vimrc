@@ -10,6 +10,7 @@ set t_ut=
 " Plugins
 "
 
+
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -20,6 +21,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'sirtaj/vim-openscad'
 
 	" Appearance
+Plugin 'itchyny/lightline.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/goyo.vim'
 
@@ -29,17 +31,19 @@ Plugin 'tpope/vim-commentary'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'depsterr/hex.vim'
 
-	" Command integration
-Plugin 'tpope/vim-fugitive'
-
 call vundle#end()
 filetype plugin indent on
-
 " netrw
 
 let g:netrw_dirhistmax=0
 let g:netrw_dirhistcnt=0
 let g:netrw_localrmdir="rm -rf"
+
+" lightline
+
+let g:lightline = {
+	\ 'colorscheme': 'jellybeans',
+	\ }
 
 
 "
@@ -53,7 +57,10 @@ syntax enable
 set nu rnu
 
 " statusbar
-set laststatus=1
+set laststatus=2
+
+" hide insert mode in command bar
+set noshowmode
 
 " tab size
 set ts=4 sw=4
@@ -67,6 +74,9 @@ set wildmenu
 
 " linebreak
 set lbr
+
+" recursive search in path
+set path+=**
 
 
 "
@@ -89,6 +99,14 @@ noremap <S-tab> <<
 
 " hex editing
 noremap <localleader>he :HexToggle<CR>
+
+
+"
+" Tags
+"
+
+command! MakeTags silent! !ctags -R .
+command! RemoveTags silent! !rm tags
 
 
 "
@@ -202,6 +220,18 @@ noremap <localleader>sr zug
 noremap <localleader>sb zw
 " unban word from dictionary
 noremap <localleader>su zuw
+
+"
+" Leave input mode quickly
+"
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+    	autocmd!
+    	au InsertEnter * set timeoutlen=0
+    	au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
 
 "
