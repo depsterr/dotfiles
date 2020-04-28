@@ -10,7 +10,6 @@ set t_ut=
 " Plugins
 "
 
-
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -37,12 +36,6 @@ filetype plugin indent on
 let g:netrw_dirhistmax=0
 let g:netrw_dirhistcnt=0
 let g:netrw_localrmdir="rm -rf"
-
-" lightline
-
-let g:lightline = {
-	\ 'colorscheme': 'jellybeans',
-	\ }
 
 
 "

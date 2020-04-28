@@ -12,6 +12,11 @@ XF86AudioMute
 XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+super + equal
+	pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+super + minus
+	pactl set-sink-volume @DEFAULT_SINK@ -10%
 
 #
 # Brightness
@@ -40,10 +45,6 @@ super + XF86MonBrightnessDown
 # start a terminal
 super + Return 
 	st -e tmux
-
-# start ranger
-super + r
-	st -e ranger
 
 # start python shell
 super + p
